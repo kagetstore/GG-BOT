@@ -1,369 +1,177 @@
-exports.menu = (prefix, i) => {
-    return `*INI WM AQULZZ*
-`
-}
+exports.allmenu = (pushname, sender, isOwner, isPrem, cekvipp, getLimit, limitawal, limit, balance, getBalance, simbolnya, petik, prefix) => {
+return`Hello ${pushname}🤗
 
-exports.newMenu = (ucapan, ownerName, botName, prefix, pendaftar, runtime, pushname, isOwner, isPremium, sisalimit, limitCount, glimit, gcount, expired, tanggal, jam) => {
-    return `${ucapan.data.result} ${pushname}
-╒═══ 《 *${botName}* 》 ═══
-├────────────────────
-├≽ *Creator : ${ownerName}*
-├≽ *Lib : Baileys V.3.5.1*
-├≽ *Prefix : 「 ${prefix} 」*
-├≽ *Total Fitur : 200+*
-├≽ *Total Pengguna : ${pendaftar.length}*
-├≽ *Tanggal : ${tanggal}*
-├≽ *Pukul : ${jam}*
-├≽ *Runtime Bot*
-├≽ *${runtime}*
-├────────────────────
-╞═══ 《 *USER INFO* 》 ═══
-├────────────────────
-├≽ *Name* : *${pushname}*
-├≽ *Status* : *${isOwner ? 'OWNER' : isPremium ? 'Premium' : 'Gratisan'}*
-├≽ *Limit* : *${isPremium ? 'Unlimited' : `${sisalimit}/${limitCount}`}*
-├≽ *Limit Game* : *${isOwner ? 'Unlimited' : `${glimit}/${gcount}`}*
-├≽ *Expired Prem : ${isOwner ? '-' : isPremium ? expired : 'Not Premium'}*
-├────────────────────
-╞═══ 《 *MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}stickermenu*
-├≽ *${prefix}creatormenu*
-├≽ *${prefix}groupmenu*
-├≽ *${prefix}sistemmenu*
-├≽ *${prefix}gabutmenu*
-├≽ *${prefix}gamemenu*
-├≽ *${prefix}downloadmenu*
-├≽ *${prefix}searchmenu*
-├≽ *${prefix}stalkmenu*
-├≽ *${prefix}randommenu*
-├≽ *${prefix}animemenu*
-├≽ *${prefix}nsfwmenu*
-├≽ *${prefix}toolsmenu*
-├≽ *${prefix}makermenu*
-├≽ *${prefix}storagemenu*
-├≽ *${prefix}othermenu*
-├────────────────────
-╞═══ 《 𝐎𝐏𝐄𝐍 𝐒𝐄𝐖𝐀 𝐁𝐎𝐓 》 ═══
-├────────────────────
-┏━━⬣ 𝐇𝐀𝐑𝐆𝐀 𝐒𝐄𝐖𝐀 𝐁𝐎𝐓
-┃⬡ 1 Minggu : 5K
-┃⬡ 1 Bulan : 10K
-┃⬡ Permanen : 15K
-┃⬡ Jadi Bot : Tanya Owner Saja
-┃⚠️ 𝐍𝐎𝐓𝐄 : 𝐁𝐎𝐓 𝐎𝐍 𝟐𝟒 𝐉𝐀𝐌 ⚠️
-┃⚠️ NO OWNER :Wa.me/6285763500823 ⚠️ 
-┗━━⬣
-├────────────────────
-╞═══ 《 *THANKS TO* 》 ═══
-├────────────────────
-├≽ *Xinz-Team*
-├≽ *Aqulzz*
-├≽ *Nafizz*
-├≽ *Y-DhyZx*
-├≽ *Ramlan ID*
-├≽ *X-MrG3P5*
-├≽ *Nanda*
-├≽ *Juwen*
-├≽ *𝑲𝑨𝑮𝑬𝑻𝑺𝑻𝑶𝑹𝑬*
-├≽ *Adiwajshing/Baileys*
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
+📛 Nama : ${pushname} 
+🆔 Nomor : @${sender.split("@")[0]} 
+📊 Status : ${isOwner?`Owner ⚔️`:isPrem?`Premium 🏅`:`Free User`} 
+🎁 Expired Prem : ${isOwner?`Unlimited Owner`:isPrem ? `${cekvipp.days}d, ${cekvipp.hours}h, ${cekvipp.minutes}m, ${cekvipp.seconds}s`:'Not Premium'}
+💳 Limit : ${isOwner?`Unlimited`: isPrem ? `Unlimited Premium` : getLimit(sender, limitawal, limit) +' / '+limitawal}
+💹 Balance : $${getBalance(sender, balance)}
 
-exports.stickerMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *STICKER MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}sticker*
-├≽ *${prefix}stickergif*
-├≽ *${prefix}swm*
-├≽ *${prefix}take*
-├≽ *${prefix}toimg*
-├≽ *${prefix}tovideo*
-├≽ *${prefix}attp*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
 
-exports.ownerMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *CREATOR MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}addprem*
-├≽ *${prefix}delprem*
-├≽ *${prefix}ban*
-├≽ *${prefix}unban*
-├≽ *${prefix}join*
-├≽ *${prefix}addbaword*
-├≽ *${prefix}delbaword*
-├≽ *${prefix}addchangelog*
-├≽ *${prefix}sewa*
-├≽ *${prefix}public*
-├≽ *${prefix}self*
-├≽ *${prefix}exif*
-├≽ *${prefix}bc*
-├≽ *${prefix}setprefix*
-├≽ *${prefix}setthumb*
-├≽ *${prefix}clearall*
-├≽ *${prefix}>*
-├≽ *${prefix}$*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
+*Owner Menu*${petik}
+${simbolnya} ${prefix}bc
+${simbolnya} ${prefix}exif
+${simbolnya} ${prefix}ban
+${simbolnya} ${prefix}unban
+${simbolnya} ${prefix}block
+${simbolnya} ${prefix}unblock
+${simbolnya} ${prefix}clearall
+${simbolnya} ${prefix}setbiobot
+${simbolnya} ${prefix}setnamabot
+${simbolnya} ${prefix}resetlimit
+${simbolnya} ${prefix}cekapikey
+${simbolnya} ${prefix}setthumb
+${simbolnya} ${prefix}setmenu [simple/ori]
+${simbolnya} ${prefix}prem add @tag waktu
+${simbolnya} ${prefix}prem del @tag waktu
+${simbolnya} ${prefix}sewa add waktu
+${simbolnya} ${prefix}sewa del
+${simbolnya} ${prefix}auto ngetik/vn
+${simbolnya} ${prefix}setprefix nopref/multi
+${simbolnya}  > || x
+${simbolnya}  =>
+${simbolnya}  $
+${simbolnya}  <${petik}
 
-exports.groupMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *GROUP MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}afk*
-├≽ *${prefix}infogrup*
-├≽ *${prefix}add*
-├≽ *${prefix}kick*
-├≽ *${prefix}promote*
-├≽ *${prefix}demote*
-├≽ *${prefix}linkgc*
-├≽ *${prefix}leave*
-├≽ *${prefix}setdesc*
-├≽ *${prefix}setgrupname*
-├≽ *${prefix}setppgrup*
-├≽ *${prefix}opengrup*
-├≽ *${prefix}closegrup*
-├≽ *${prefix}tagall*
-├≽ *${prefix}tagme*
-├≽ *${prefix}kontak*
-├≽ *${prefix}hidetag*
-├≽ *${prefix}getpp*
-├≽ *${prefix}mute*
-├≽ *${prefix}unmute*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
+*Download Menu*${petik}
+${simbolnya} ${prefix}play [query]
+${simbolnya} ${prefix}ytmp3 [url]
+${simbolnya} ${prefix}ytmp4 [url]
+${simbolnya} ${prefix}video [query]
+${simbolnya} ${prefix}igdl [url]
+${simbolnya} ${prefix}igstory [username]
+${simbolnya} ${prefix}igphoto [url]
+${simbolnya} ${prefix}igreel [url]
+${simbolnya} ${prefix}igvideo [url]
+${simbolnya} ${prefix}igtv [url]
+${simbolnya} ${prefix}tiktok [url]
+${simbolnya} ${prefix}tiktokaudio [url]
+${simbolnya} ${prefix}tiktoknowm [url]
+${simbolnya} ${prefix}mediafire [url]${petik}
 
-exports.sistemMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *SISTEM MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}antilink*
-├≽ *${prefix}antiwame*
-├≽ *${prefix}antibadword*
-├≽ *${prefix}welcome*
-├≽ *${prefix}left*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
+*Convert Menu*${petik}
+${simbolnya} ${prefix}sticker
+${simbolnya} ${prefix}swm
+${simbolnya} ${prefix}take
+${simbolnya} ${prefix}attp
+${simbolnya} ${prefix}semoji 🐦
+${simbolnya} ${prefix}toimg
+${simbolnya} ${prefix}tomp4
+${simbolnya} ${prefix}togif
+${simbolnya} ${prefix}tomp3
+${simbolnya} ${prefix}tovn
+${simbolnya} ${prefix}tinyurl
+${simbolnya} ${prefix}kontak
+${simbolnya} ${prefix}tts Kode Bahasa Teks
+${simbolnya} ${prefix}translate Kode Bahasa
+${simbolnya} ${prefix}bass
+${simbolnya} ${prefix}slow
+${simbolnya} ${prefix}fast
+${simbolnya} ${prefix}robot
+${simbolnya} ${prefix}detikvn
+${simbolnya} ${prefix}tupai
+${simbolnya} ${prefix}vibrato${petik}
 
-exports.gabutMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *GABUTZ MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}apakah*
-├≽ *${prefix}bisakah*
-├≽ *${prefix}kapankah*
-├≽ *${prefix}hobby*
-├≽ *${prefix}rate*
-├≽ *${prefix}cekbapak*
-├≽ *${prefix}seberapagay*
-├≽ *${prefix}truth*
-├≽ *${prefix}dare*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
+*Editor Menu*${petik}
+${simbolnya} ${prefix}memegen teks atas | teks bawah
+${simbolnya} ${prefix}stickmeme teks${petik}
 
-exports.gameMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *GAME MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}tictactoe*
-├≽ *${prefix}delttt*
-├≽ *${prefix}tebakgambar*
-├≽ *${prefix}family100*
-├≽ *${prefix}suit*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
+*Search Menu*${petik}
+${simbolnya} ${prefix}caripesan
+${simbolnya} ${prefix}pinterest
+${simbolnya} ${prefix}wikipedia
+${simbolnya} ${prefix}playstore
+${simbolnya} ${prefix}brainly
+${simbolnya} ${prefix}yts${petik}
 
-exports.downloadMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *DOWNLOAD MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}ytmp3*
-├≽ *${prefix}ytmp4*
-├≽ *${prefix}play*
-├≽ *${prefix}playmp4*
-├≽ *${prefix}tiktok*
-├≽ *${prefix}tiktokmp3*
-├≽ *${prefix}instagram*
-├≽ *${prefix}facebook*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
+*Storage Menu*${petik}
+${simbolnya} ${prefix}addrespon
+${simbolnya} ${prefix}delrespon
+${simbolnya} ${prefix}listrespon
+${simbolnya} ${prefix}listbadword
+${simbolnya} ${prefix}addbadword
+${simbolnya} ${prefix}delbadword
+${simbolnya} ${prefix}addvn
+${simbolnya} ${prefix}listvn
+${simbolnya} ${prefix}delvn
+${simbolnya} ${prefix}addimage
+${simbolnya} ${prefix}listimage
+${simbolnya} ${prefix}delimage
+${simbolnya} ${prefix}addvideo
+${simbolnya} ${prefix}listvideo
+${simbolnya} ${prefix}delvideo
+${simbolnya} ${prefix}addsticker
+${simbolnya} ${prefix}liststicker
+${simbolnya} ${prefix}delstik${petik}
 
-exports.searchMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *SEARCH MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}yts*
-├≽ *${prefix}pinterest*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
+*Fun Menu*${petik}
+${simbolnya} ${prefix}slot
+${simbolnya} ${prefix}truth
+${simbolnya} ${prefix}dare
+${simbolnya} ${prefix}voting @tag | alasan | waktu
+${simbolnya} ${prefix}delvote
+	vote
+	devote${petik}
+   
+*Group Menu*${petik}
+${simbolnya} ${prefix}chatinfo
+${simbolnya} ${prefix}afk reason
+${simbolnya} ${prefix}hidetag
+${simbolnya} ${prefix}notif
+${simbolnya} ${prefix}infogc
+${simbolnya} ${prefix}jadian
+${simbolnya} ${prefix}listonline
+${simbolnya} ${prefix}tagall
+${simbolnya} ${prefix}ceksewa
+${simbolnya} ${prefix}add 628XX
+${simbolnya} ${prefix}kick
+${simbolnya} ${prefix}promote
+${simbolnya} ${prefix}demote
+${simbolnya} ${prefix}resetlink
+${simbolnya} ${prefix}linkgc
+${simbolnya} ${prefix}grup [open/close]
+${simbolnya} ${prefix}antibadword [on/off]
+${simbolnya} ${prefix}antilink [on/off]
+${simbolnya} ${prefix}antitroli [on/off]${petik}
+   
+*Limit Menu*${petik}
+${simbolnya} ${prefix}topbalance
+${simbolnya} ${prefix}toplimit
+${simbolnya} ${prefix}limit
+${simbolnya} ${prefix}level
+${simbolnya} ${prefix}balance
+${simbolnya} ${prefix}buylimit Nominal
+${simbolnya} ${prefix}giftlimit @tag | nominal
+${simbolnya} ${prefix}buyprem [need 1k limit]${petik}
+   
+*Maker Menu*${petik}
+${simbolnya} ${prefix}nuliskanan
+${simbolnya} ${prefix}nuliskiri
+${simbolnya} ${prefix}foliokanan
+${simbolnya} ${prefix}foliokiri
+${simbolnya} ${prefix}naruto
+${simbolnya} ${prefix}shadow
+${simbolnya} ${prefix}lovemsg
+${simbolnya} ${prefix}doubleheart
+${simbolnya} ${prefix}coffecup
+${simbolnya} ${prefix}lovetext
+${simbolnya} ${prefix}butterfly
+${simbolnya} ${prefix}romantic
+${simbolnya} ${prefix}smoke
+${simbolnya} ${prefix}burnpaper
+${simbolnya} ${prefix}grass${petik}
 
-exports.stalkMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *STALKER MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}igstalk*
-├≽ *${prefix}ghstalk*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
-
-exports.randomMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *RANDOM MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}quotes*
-├≽ *${prefix}darkjokes
-├≽ *${prefix}pantun
-├≽ *${prefix}bucin
-├≽ *${prefix}cehor
-├≽ *${prefix}fakta
-├≽ *${prefix}katabijak
-├≽ *${prefix}motivasi
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
-
-exports.animeMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *ANIME MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}waifu*
-├≽ *${prefix}loli*
-├≽ *${prefix}husbu*
-├≽ *${prefix}shota*
-├≽ *${prefix}nekonime*
-├≽ *${prefix}megumin*
-├≽ *${prefix}sagiri*
-├≽ *${prefix}shinobu*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
-
-exports.toolsMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *TOOLS MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}nulis*
-├≽ *${prefix}nuliskiri*
-├≽ *${prefix}nuliskanan*
-├≽ *${prefix}foliokiri*
-├≽ *${prefix}foliokanan*
-├≽ *${prefix}tinyurl*
-├≽ *${prefix}translate*
-├≽ *${prefix}ebase64*
-├≽ *${prefix}debase64*
-├≽ *${prefix}ehex*
-├≽ *${prefix}dehex*
-├≽ *${prefix}ebinary*
-├≽ *${prefix}debinary*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
-
-exports.makerMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *MAKER MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}hartatahta*
-├≽ *${prefix}neon*
-├≽ *${prefix}matrix*
-├≽ *${prefix}blackpink*
-├≽ *${prefix}halloween*
-├≽ *${prefix}thundername*
-├≽ *${prefix}devilwings*
-├≽ *${prefix}cloudtext*
-├≽ *${prefix}bloodtext*
-├≽ *${prefix}bloodtext2*
-├≽ *${prefix}steeltext*
-├≽ *${prefix}lavatext*
-├≽ *${prefix}toxiclogo*
-├≽ *${prefix}dropwater*
-├≽ *${prefix}metaldark*
-├≽ *${prefix}sandwrite*
-├≽ *${prefix}3dwater*
-├≽ *${prefix}graffiti*
-├≽ *${prefix}graffiti2*
-├≽ *${prefix}phlogo*
-├≽ *${prefix}glitch*
-├≽ *${prefix}graffiti3*
-├≽ *${prefix}layeredtext*
-├≽ *${prefix}vintage*
-├≽ *${prefix}3dspace*
-├≽ *${prefix}stonetext*
-├≽ *${prefix}avengers*
-├≽ *${prefix}marvellogo*
-├≽ *${prefix}3dmetal*
-├≽ *${prefix}lionlogo*
-├≽ *${prefix}wolflogo*
-├≽ *${prefix}ninjalogo*
-├≽ *${prefix}pubglogo*
-├≽ *${prefix}shadowtext*
-├≽ *${prefix}smoketext*
-├≽ *${prefix}romancetext*
-├≽ *${prefix}carvedwood*
-├≽ *${prefix}harrypotter*
-├≽ *${prefix}flamingtext*
-├≽ *${prefix}falleaves*
-├≽ *${prefix}underwater*
-├≽ *${prefix}wolfmetal*
-├≽ *${prefix}woodboard*
-├≽ *${prefix}undergrass*
-├≽ *${prefix}coffetext*
-├≽ *${prefix}lovetext*
-├≽ *${prefix}burnpaper*
-├≽ *${prefix}lovemessage*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
-
-exports.otherMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *OTHER MENU* 》 ═══
-├────────────────────
-├≽ *cekprefix*
-├≽ *${prefix}stats*
-├≽ *${prefix}limit*
-├≽ *${prefix}balance*
-├≽ *${prefix}runtime*
-├≽ *${prefix}speed*
-├≽ *${prefix}owner*
-├≽ *${prefix}donasi*
-├≽ *${prefix}sourcecode*
-├≽ *${prefix}cekprem*
-├≽ *${prefix}listprem*
-├≽ *${prefix}listban*
-├≽ *${prefix}listbadword*
-├≽ *${prefix}buylimit*
-├≽ *${prefix}buyglimit*
-├≽ *${prefix}topglobal*
-├≽ *${prefix}toplocal*
-├≽ *${prefix}readmore*
-├≽ *${prefix}cekapikey*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
-
-exports.hentaiMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *18+ MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}randomhentong*
-├≽ *${prefix}kemonomimi*
-├≽ *${prefix}ero*
-├≽ *${prefix}echi*
-├≽ *${prefix}ahegao*
-├≽ *${prefix}trap*
-├≽ *${prefix}neko*
-├≽ *${prefix}blowjob*
-├≽ *${prefix}kitsune*
-├≽ *${prefix}yuri*
-├≽ *${prefix}boobs*
-├≽ *${prefix}kuni*
-├≽ *SEWA BOT KETIK #owner*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
-}
-
-exports.storageMenu = (prefix, ownerName) => {
-    return `╒═══ 《 *STORAGE MENU* 》 ═══
-├────────────────────
-├≽ *${prefix}sound*
-├─────────────────────
-╘═══ 《 *By ${ownerName}* 》 ═══`
+*Others Menu*${petik}
+${simbolnya} ${prefix}pantun
+${simbolnya} ${prefix}faktaunik
+${simbolnya} ${prefix}styletext
+${simbolnya} ${prefix}donasi
+${simbolnya} ${prefix}asupan
+${simbolnya} ${prefix}nulis
+${simbolnya} ${prefix}getnumber
+${simbolnya} ${prefix}getpic
+${simbolnya} ${prefix}inspect
+${simbolnya} ${prefix}wame 
+${simbolnya} ${prefix}towame${petik}`
 }
